@@ -55,3 +55,114 @@ The platform integrates **Machine Learning–based Toxic Message Detection** to 
 - **Logistic Regression Classifier**
 - Trained on a structured dataset containing toxic & non-toxic messages
 - Saves model as:
+
+
+Final_StudyBuddy/
+│
+├── base/
+│ ├── models.py
+│ ├── views.py
+│ ├── consumers.py
+│ ├── routing.py
+│ ├── templates/base/
+│
+├── studybud/
+│ ├── settings.py
+│ ├── urls.py
+│ ├── asgi.py
+│ └── utils/
+│ ├── toxic_words.txt
+│ ├── toxicity_checker.py
+│ └── toxicity_model.pkl
+│
+├── ml/
+│ └── train_toxicity_model.py
+│
+├── data/
+│ └── train.csv
+│
+├── static/
+├── templates/
+├── requirements.txt
+├── manage.py
+
+
+---
+
+## 🧩 Installation & Setup
+
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/Ujwal1121/Final_StudyBuddy.git
+cd Final_StudyBuddy
+
+2️⃣ Create Virtual Environment
+python3 -m venv venv
+source venv/bin/activate
+
+3️⃣ Install Requirements
+pip install -r requirements.txt
+
+4️⃣ Run Redis Server
+
+Default:
+
+redis-server
+
+
+Or on a custom port:
+
+redis-server --port 6375
+
+5️⃣ Migrate the Database
+python manage.py makemigrations
+python manage.py migrate
+
+6️⃣ Create Superuser
+python manage.py createsuperuser
+
+7️⃣ Start the Application
+Option A — With WebSockets (recommended)
+daphne -b 127.0.0.1 -p 8000 studybud.asgi:application
+
+Option B — Standard Django runserver
+python manage.py runserver
+
+
+Note: runserver will NOT activate real-time WebSockets.
+Use Daphne for full chat functionality.
+
+🎥 Demo Video (Add your link)
+
+Upload your demo to:
+
+YouTube
+
+Google Drive
+
+GitHub Releases
+
+Then link it here:
+
+🎬 Demo: https://your-demo-video-link
+
+🖼️ Screenshots (Optional)
+
+You can add your images like this:
+
+![Home Page](assets/home.png)
+![Chat Room](assets/chat-room.png)
+![Toxic Filter](assets/toxic-detection.png)
+
+📝 License
+
+This project is created for educational and academic use.
+Feel free to modify and extend it for personal or portfolio use.
+
+🙌 Acknowledgements
+
+Inspired by the "StudyBud" original project structure
+
+Toxic dataset structure inspired by open-source comment classification datasets
+
+Scikit-learn, Redis, Django, and Channels communities
