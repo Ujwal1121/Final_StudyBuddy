@@ -60,31 +60,75 @@ The platform integrates **Machine Learning–based Toxic Message Detection** to 
 Final_StudyBuddy/
 │
 ├── base/
-│ ├── models.py
-│ ├── views.py
-│ ├── consumers.py
-│ ├── routing.py
-│ ├── templates/base/
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── consumers.py
+│   ├── forms.py
+│   ├── migrations/
+│   │   ├── 0001_initial.py
+│   │   ├── 0002_auto_20210921_1315.py
+│   │   ├── 0003_user_avatar.py
+│   │   ├── 0004_alter_user_avatar.py
+│   │   ├── 0005_alter_user_avatar.py
+│   │   ├── 0006_alter_user_managers.py
+│   │   ├── 0007_alter_room_description.py
+│   │   ├── 0008_message_is_toxic.py
+│   │   ├── 0009_message_is_visible.py
+│   │   └── __init__.py
+│   ├── models.py
+│   ├── routing.py
+│   ├── templates/base/
+│   │   ├── activity.html
+│   │   ├── activity_component.html
+│   │   ├── delete.html
+│   │   ├── feed_component.html
+│   │   ├── home.html
+│   │   ├── login_register.html
+│   │   ├── profile.html
+│   │   ├── room.html
+│   │   ├── room_form.html
+│   │   ├── topics.html
+│   │   ├── topics_component.html
+│   │   └── update-user.html
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
 │
 ├── studybud/
-│ ├── settings.py
-│ ├── urls.py
-│ ├── asgi.py
-│ └── utils/
-│ ├── toxic_words.txt
-│ ├── toxicity_checker.py
-│ └── toxicity_model.pkl
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   ├── utils/
+│   │   ├── toxic_words.txt
+│   │   ├── toxicity_checker.py
+│   │   └── toxicity_model.pkl
+│   └── wsgi.py
 │
 ├── ml/
-│ └── train_toxicity_model.py
+│   └── train_toxicity_model.py
 │
 ├── data/
-│ └── train.csv
+│   └── train.csv
 │
 ├── static/
+│   ├── images/
+│   ├── js/
+│   └── styles/
+│
 ├── templates/
-├── requirements.txt
+│   ├── main.html
+│   └── navbar.html
+│
+├── theme/
+│   ├── *.html
+│   ├── assets/
+│   └── style.css
+│
 ├── manage.py
+├── requirements.txt
+└── README.md
 
 
 ---
