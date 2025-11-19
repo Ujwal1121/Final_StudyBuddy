@@ -1,78 +1,57 @@
-<div align="center">
-<img width="30%" src="https://user-images.githubusercontent.com/72341453/134747028-7e2d90cc-a92f-4f66-815e-54a0d50cca54.PNG">
+# Final StudyBuddy  
+### A Real-Time Collaborative Learning Platform with ML-Based Toxicity Detection  
 
-# StudyBuddy
-</div>
+StudyBuddy is a collaborative web platform designed for students and developers to join topic-based rooms, discuss problems, share knowledge, and chat in real time.  
+The platform integrates **Machine Learning–based Toxic Message Detection** to ensure safe and respectful communication.
 
-### Cloning the repository
+---
 
---> Clone the repository using the command below :
-```bash
-git clone https://github.com/divanov11/StudyBud.git
+## 🚀 Key Features
 
-```
+### 🧑‍🤝‍🧑 Real-Time Chat System
+- Powered by **Django Channels**, **WebSockets**, and **Redis**
+- Messages update instantly across all connected users
+- Smooth chat UI with automatic message rendering
 
---> Move into the directory where we have the project files : 
-```bash
-cd StudyBud
+### 🛡️ ML-Based Toxicity Detection
+- All messages are validated through an ML model
+- Toxic messages are:
+  - Blocked instantly
+  - Not saved in the database
+  - Replaced with `[message removed due to toxic content]`
+  - User receives a warning alert
 
-```
+### 💬 Smart Toxic Word Sanitization
+- Detects individual toxic words
+- Replaces them with `[censored]`
+- Prevents harmful communication while maintaining usability
 
---> Create a virtual environment :
-```bash
-# Let's install virtualenv first
-pip install virtualenv
+### 👤 User Accounts & Profiles
+- User registration & login
+- Custom profile with avatar upload
+- Fully visible in Django admin panel
 
-# Then we create our virtual environment
-virtualenv envname
+### 🏷️ Rooms & Topics
+- Create or join rooms grouped by topics (AI, Python, Web Dev, etc.)
+- See room activity and history
+- Persistent chat storage (non-toxic only)
 
-```
+### 📚 Activity Feed
+- Displays platform activities such as:
+  - New messages
+  - Room updates
+  - User participation
 
---> Activate the virtual environment :
-```bash
-envname\scripts\activate
+### 🎨 Modern Responsive UI
+- Clean, minimal look inspired by TailwindCSS
+- Templates for login, signup, room creation, chat, profile, etc.
 
-```
+---
 
---> Install the requirements :
-```bash
-pip install -r requirements.txt
+## 🧠 Machine Learning – Toxicity Model
 
-```
-
-#
-
-### Running the App
-
---> To run the App, we use :
-```bash
-python manage.py runserver
-
-```
-
-> ⚠ Then, the development server will be started at http://127.0.0.1:8000/
-
-#
-
-### App Preview :
-
-<table width="100%"> 
-<tr>
-<td width="50%">      
-&nbsp; 
-<br>
-<p align="center">
-  Feed Home
-</p>
-<img src="https://user-images.githubusercontent.com/72341453/134747262-0a92233d-8010-40f8-84c5-8d94895aac44.PNG">
-</td> 
-<td width="50%">
-<br>
-<p align="center">
-  Room Conversation Preview
-</p>
-<img src="https://user-images.githubusercontent.com/72341453/134747155-3ca5b55f-b064-4741-aeae-abe90bddf41e.PNG">  
-</td>
-</table>
-
-
+### ✔ Model Pipeline
+- **TF-IDF Vectorizer**
+- **Logistic Regression Classifier**
+- Trained on a structured dataset containing toxic & non-toxic messages
+- Saves model as:
